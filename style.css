@@ -11,7 +11,7 @@
 
 body {
   color: aliceblue;
-  background-color:  gray;
+  background-color:  #212121;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,6 +25,12 @@ section {
   border-radius: 10px;
   margin: 50px 0;
 }
+form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
 
 .mission-box {
   padding: 0 30px;
@@ -32,6 +38,7 @@ section {
   height: 56px;
   border-radius: 50px;
   color: rgb(2, 2, 2);
+  margin-right: 10px;
 }
 
 #send-box {
@@ -59,12 +66,16 @@ section {
   display: flex;
   gap: 30px;
   align-items: center;
-  /* background-color: rgb(32, 31, 31); */
+  background-color: #2F2F2F;
 
   border: 2px solid rgb(38, 36, 36);
   border-radius: 5px;
   padding: 20px;
+  /* background-color: transparent;
+  backdrop-filter: blur(30px); */
 }
+
+
 
 .checkbox {
   width: 15px;
@@ -78,10 +89,38 @@ section {
 
 .mission-text {
     flex-grow: 1;
-      word-break: break-word;
+    word-break: break-word;
+    background-color: transparent;
+    font-size: 20px;
+    height: 40px;
+    color: white;
 }
 
-/*input stillerini düzelt 
+/*
 edit delete save actions classlarını ekle 
 form inputunu ortala
 */
+
+
+.actions{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+.delete{
+  padding: 10px;
+  background-color: #212121;
+  color: white;
+  margin: 0 10px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+.edit{
+  padding: 10px;
+  background-color: #212121;
+  color: white;
+  border-radius: 10px;
+  text-transform: uppercase;
+
+}

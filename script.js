@@ -66,11 +66,29 @@ function addMissionToDOM(text) {
   newMission.appendChild(missionActions);
 
   missionEdit.addEventListener('click', () => {
+    if(missionEdit.innerText.toLowerCase() === "edit"){
     newMissionText.removeAttribute("readonly");
     newMissionText.focus();
-    // buraya çalışması için fonksiyonu koşulla ekle
+    missionEdit.innerText = "save";
 
-  })
+
+    // buraya çalışması için fonksiyonu koşulla ekle
+}
+else{
+  newMissionText.setAttribute("readonly","readonly");
+  // newMissionText.value = newText;
+  missionEdit.innerText = "edit";
+  updateMission(text,newMissionText.value);
+
+ 
+}
+  });
+
+  missionDelete.addEventListener('click', () =>{
+    missionsContainer.removeChild(newMission);
+    deleteMission(newMissionText.value);
+
+  });
   
 
   // Yeni görevi mevcut görevler konteynerine ekle
@@ -84,4 +102,21 @@ function saveMissionToLocalStorage(text) {
   localStorage.setItem("missions", JSON.stringify(missions));
 }
 
+function deleteMission(text){
+  let missions = JSON.parse(localStorage.getItem("missions")) || [];
+  // let missionIndex = missions.indexOf(missionText.value);
+  // missions.splice(missionIndex, 1);
+  // localStorage.setItem("missions", JSON.stringify(missions));
+  missions = missions.filter(mission => mission !== text);
+      localStorage.setItem("missions", JSON.stringify(missions));
+}
 
+
+function updateMission(oldText, newText) {
+  let missions = JSON.parse(localStorage.getItem("missions")) || [];
+  const index = missions.indexOf(oldText);
+  if (index > -1) {
+    missions[index] = newText;
+    localStorage.setItem("missions", JSON.stringify(missions));
+  }
+}
