@@ -11,12 +11,33 @@
 
 body {
   color: aliceblue;
-  background-color:  #212121;
+  background-color: #212121;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   width: 100%;
+  background-image: url(images/space2.jpg) ;
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header div i {
+  font-size: 180%;
+}
+header .login, header .calender  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: baseline;
+
 }
 
 section {
@@ -25,11 +46,31 @@ section {
   border-radius: 10px;
   margin: 50px 0;
 }
-form{
+form {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+}
+form .addButton {
+  background-color: #212121;
+  color: aliceblue;
+  padding: 0 ;
+ width: 56px;
+  height: 56px;
+  border-radius: 50px;
+}
+form .addButton i{
+  font-size: 160%;
+}
+form .addingCategories{
+  display: none;
+}
+
+form #categories {
+  height: 50px;
+  width: 150px;
+  border-radius: 50px;
+  /* margin-left: ; */
 }
 
 .mission-box {
@@ -38,7 +79,7 @@ form{
   height: 56px;
   border-radius: 50px;
   color: rgb(2, 2, 2);
-  margin-right: 10px;
+  margin: 0 10px;
 }
 
 #send-box {
@@ -47,6 +88,19 @@ form{
   background-color: blueviolet;
   border-radius: 50px;
   cursor: pointer;
+}
+.categories{
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.categories .categ{
+
+  display: inline-block;
+  border: 2px solid green;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: 10px;
 }
 
 .missions {
@@ -58,15 +112,15 @@ form{
   padding: 50px;
   grid-gap: 30px;
 }
-.vertical{
-    grid-row: span auto;
+.vertical {
+  grid-row: span auto;
 }
 .mission {
-    width: 100%;
+  width: 100%;
   display: flex;
   gap: 30px;
   align-items: center;
-  background-color: #2F2F2F;
+  background-color: #2f2f2f;
 
   border: 2px solid rgb(38, 36, 36);
   border-radius: 5px;
@@ -74,8 +128,6 @@ form{
   /* background-color: transparent;
   backdrop-filter: blur(30px); */
 }
-
-
 
 .checkbox {
   width: 15px;
@@ -88,12 +140,12 @@ form{
 }
 
 .mission-text {
-    flex-grow: 1;
-    word-break: break-word;
-    background-color: transparent;
-    font-size: 20px;
-    height: 40px;
-    color: white;
+  flex-grow: 1;
+  word-break: break-word;
+  background-color: transparent;
+  font-size: 20px;
+  height: 40px;
+  color: white;
 }
 
 /*
@@ -101,14 +153,13 @@ edit delete save actions classlarını ekle
 form inputunu ortala
 */
 
-
-.actions{
+.actions {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 5px;
 }
-.delete{
+.delete {
   padding: 10px;
   background-color: #212121;
   color: white;
@@ -116,11 +167,10 @@ form inputunu ortala
   border-radius: 10px;
   text-transform: uppercase;
 }
-.edit{
+.edit {
   padding: 10px;
   background-color: #212121;
   color: white;
   border-radius: 10px;
   text-transform: uppercase;
-
 }
