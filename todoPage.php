@@ -29,8 +29,9 @@
     <form action="">
       <button class="addButton"><i class="fa-solid fa-plus"></i></button>
 
-          <div class="addingCategories">
-            <input type="text" id="cat" class="categ">
+          <div class="addingCategories" style="  display: none;
+">
+            <input type="text" id="cat" class="categInput">
             <input type="button" value="ADD" id="addCateg">
           </div>
 
@@ -44,7 +45,7 @@
     </form>
     <div class="categories">
       <div class="categ">
-        <span>1</span>
+        <span>ALL</span>
       </div><div class="categ">
         <span>1</span>
       </div>
